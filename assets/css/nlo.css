@@ -1,0 +1,36 @@
+.scroll-interactive-container {
+    width: 100%;
+    padding: 20px;
+}
+
+.scroll-interactive-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.scroll-interactive-content {
+    flex: 1;
+    padding: 10px;
+    z-index: 1;
+}
+
+.scroll-interactive-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.scroll-interactive-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.scroll-interactive-container {
+    height: 100vh; /* Adjust as needed */
+    position: relative;
+}
