@@ -4604,6 +4604,16 @@ input[type="button"].btn-block {
   white-space: nowrap;
 }
 
+.navbar-brand.logo {
+    display: inline-block;
+    width: 400px; /* Adjust width as needed */
+    height: 90px; /* Adjust height as needed */
+    background-image: url('../imgs/logo-nlo.png'); /* Path to your logo image */
+    background-size: contain; /* Ensures the image scales properly */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    background-position: center; /* Centers the image */
+}
+
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
 }
