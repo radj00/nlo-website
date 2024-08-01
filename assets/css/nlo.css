@@ -1,3 +1,53 @@
+.hass-line:after {
+  content: '';
+  width: 80px;
+  height: 3px;
+  border-radius: 20px;
+  background-color: #3a4a6a; /* Updated underline color */
+  display: block;
+  margin: 15px auto 18px;
+}
+
+.firm-has-img-bg {
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/bg-img.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/bg-img.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #fff;
+  position: relative;
+}
+
+/* Overlay for red center */
+.firm-has-img-bg:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 0, 0.3); /* Adjust the red color and opacity as needed */
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.firm-has-img-bg * {
+  position: relative;
+  z-index: 10;
+}
+
+.firm-has-img-bg:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
 .scroll-interactive-container {
     width: 100%;
     overflow: hidden;
@@ -8,7 +58,7 @@
 }
 
 .scroll-interactive-background {
-    background: url('path/to/your/image.jpg') no-repeat center center;
+    background: url('../imgs/img1.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     width: 100%;
