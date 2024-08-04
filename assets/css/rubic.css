@@ -11424,7 +11424,7 @@ textarea {
   background-attachment: fixed;
   color: white;
   position: relative;
-  min-height: 600px;
+  min-height: 442px;
   height: 100vh; /* Full viewport height */
   width: 100%;
 }
