@@ -338,6 +338,9 @@
 .ti-view-list-alt:before {
 	content: "\e668";
 }
+.ti-phone:before {
+    content: "\e663"; /* Unicode for ti-phone icon */
+}
 .ti-view-grid:before {
 	content: "\e669";
 }

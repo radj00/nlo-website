@@ -42,6 +42,17 @@
   z-index: 2; /* Ensure it's above the red overlay */
 }
 
+.section:nth-child(odd) {
+  background-color: #111825;
+}
+
+.section:nth-child(odd) p {
+  color: #ffffff; /* White color for paragraphs */
+}
+
+.section:nth-child(odd) h6 {
+  color: #ed9042; /* Color for h6 elements */
+}
 .hass-line {
   position: relative;
   display: inline-block;
@@ -206,6 +217,19 @@ img {
     color: #333; /* Adjust color as needed */
 }
 
+.item .fallback-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Adjust height as needed */
+    background-color: none; /* No background color */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make text bold */
+    text-align: center;
+    border-radius: 8px; /* Optional: for rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Optional: for shadow effect */
+}
 /* owl carousel end*/
 
 .map-container {
@@ -226,12 +250,12 @@ img {
 
 .map-container {
   width: 100%;
-  height: 300px; /* Adjust height for mobile screens */
+  height: 200px; /* Adjust height for mobile screens */
 }
 
 @media (min-width: 768px) {
   .map-container {
-    height: 450px; /* Adjust height for larger screens */
+    height: 250px; /* Adjust height for larger screens */
   }
 }
 
@@ -239,4 +263,43 @@ iframe {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.footer {
+    color: #f8f9fa; /* Light text color */
+}
+
+.footer .container {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.footer-logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+}
+
+.footer p {
+    margin: 0; /* Remove default margin */
+    margin-right: 20px; /* Add 10px space to the right */
+    font-size: 14px; /* Adjust font size as needed */
+}
+
+.footer .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.footer .logo-container img {
+    margin-left: 10px; /* Add 10px space to the left of the logo */
+}
+
+.bg-wb {
+    background-color: #ffffff !important; /* Force white background */
+    color: #212529; /* Ensure text color is applied */
+}
+
+.bg-wb .display-4 {
+    color: #212529 !important; /* Dark text color for .display-4 */
 }
