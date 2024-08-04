@@ -11424,16 +11424,9 @@ textarea {
   background-attachment: fixed;
   color: white;
   position: relative;
-  min-height: 442px;
+  min-height: 700px;
   height: 100vh; /* Full viewport height */
   width: 100%;
-}
-
-@media (max-width: 768px) {
-  .header {
-    background-size: contain; /* Adjust for smaller screens */
-    background-position: center top; /* Adjust position if needed */
-  }
 }
 
 .header .header-title {
