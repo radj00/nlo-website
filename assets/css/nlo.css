@@ -1,25 +1,12 @@
-.hass-line:after {
-  content: '';
-  width: 80px;
-  height: 3px;
-  border-radius: 20px;
-  background-color: #3a4a6a; /* Updated underline color */
-  display: block;
-  margin: 15px auto 18px;
+
+/* Overlay for red center on section-box */
+.section-box {
+  position: relative; /* Ensure positioning context for the overlay */
+  overflow: hidden; /* Hide overflow to ensure overlay stays within bounds */
 }
 
-.firm-has-img-bg {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/bg-img.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/bg-img.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  color: #fff;
-  position: relative;
-}
-
-/* Overlay for red center */
-.firm-has-img-bg:before {
+/* Red center overlay */
+.section-box:before {
   content: '';
   position: absolute;
   top: 50%;
@@ -27,17 +14,23 @@
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: rgba(255, 0, 0, 0.3); /* Adjust the red color and opacity as needed */
+  background: rgba(0, 0, 0, 0.5); /* Black color with 50% opacity */
+
   mix-blend-mode: multiply;
-  z-index: 1;
+  z-index: 1; /* Place it behind the content but above the background */
 }
 
-.firm-has-img-bg * {
+/* Ensure content within the section is above the overlay */
+.section-box * {
   position: relative;
   z-index: 10;
 }
-
-.firm-has-img-bg:after {
+/* Apply justified text alignment to paragraphs within section-box */
+.section-box p {
+  text-align: justify;
+}
+/* Optional: dark overlay if needed */
+.section-box:after {
   content: '';
   display: block;
   position: absolute;
@@ -45,9 +38,53 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 2;
+  background: rgba(0, 0, 0, 0.025); /* Optional: darker overlay */
+  z-index: 2; /* Ensure it's above the red overlay */
 }
+
+.hass-line {
+  position: relative;
+  display: inline-block;
+  font-weight: bold; /* Make the text bold */
+}
+
+.hass-line:after {
+  content: '';
+  width: 80px;
+  height: 3px;
+  border-radius: 20px;
+  background-color: #900C3F; /* Adjust color as needed */
+  display: block;
+  margin: 15px auto 18px;
+}
+/* firm-has-img-bg start */
+.firm-has-img-bg {
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/bg-img.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/bg-img.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #ff9a44;
+  position: relative;
+}
+
+.firm-has-img-bg h6 {
+  color: #ff9a44; /* Color for the h6 element */
+}
+
+.firm-has-img-bg p {
+  color: #fff; /* Color for the paragraph */
+}
+/* firm-has-img-bg end */
+p.mb-5.font-weight-light {
+  text-indent: 80px; /* Adjust the value as needed */
+  margin-top: 0;    /* Top margin */
+  margin-bottom: 0; /* Bottom margin */
+  margin-left: 2.54cm;   /* Left margin */
+  margin-right: 2.54cm;  /* Right margin */
+  line-height: 1.1;      /* Adjusted line spacing for better fit */
+}
+
 .scroll-interactive-container {
     width: 100%;
     overflow: hidden;
@@ -81,3 +118,92 @@
 .scroll-interactive-content h4 {
     margin-top: 0;
 }
+
+/* Ensure images fit the carousel properly */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.fade {
+  animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+/* owl carousel start*/
+.row.pt-3 {
+    margin-bottom: 0;
+}
+
+.owl-carousel .item {
+    margin: 0;
+}
+
+.owl-carousel {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.owl-item img {
+    max-width: 50%;
+    height: auto;
+}
+/* Style for carousel headers */
+.carousel-header {
+    font-size: 1.5rem; /* Adjust size as needed */
+    font-weight: bold;
+    margin-bottom: 1rem; /* Adjust spacing below header */
+    padding-bottom: 0.5rem; /* Adjust spacing below header */
+    text-transform: uppercase; /* Optional: makes text uppercase */
+    color: #333; /* Adjust color as needed */
+}
+
+/* owl carousel end*/
