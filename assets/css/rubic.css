@@ -11418,7 +11418,7 @@ textarea {
 .header {
   background: 
     linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), /* Gradient overlay */
-    url(../imgs/header.jpg); /* Background image */
+    url(../imgs/header.png); /* Background image */
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
