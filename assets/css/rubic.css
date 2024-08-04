@@ -11416,22 +11416,23 @@ textarea {
 }
 
 .header {
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #efefef url(../imgs/header.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #efefef url(../imgs/header.jpg);
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), /* Gradient overlay */
+    url(../imgs/header.jpg); /* Background image */
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   color: white;
   position: relative;
   min-height: 600px;
-  height: 100vh; /* Use viewport height for full screen coverage */
+  height: 100vh; /* Full viewport height */
   width: 100%;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .header {
-    min-height: 400px; /* Adjust based on your design needs */
+    background-size: contain; /* Adjust for smaller screens */
+    background-position: center top; /* Adjust position if needed */
   }
 }
 
