@@ -11423,7 +11423,7 @@ textarea {
   background-attachment: fixed;
   color: white;
   position: relative;
-  min-height: 600px;
+  min-height: 300px;
   height: 100%;
 }
 
