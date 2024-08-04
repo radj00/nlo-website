@@ -11416,17 +11416,15 @@ textarea {
 }
 
 .header {
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), /* Gradient overlay */
-    url(../imgs/header.png); /* Background image */
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #efefef url(../imgs/header.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #efefef url(../imgs/header.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   color: white;
   position: relative;
-  min-height: 300px;
-  height: 100vh; /* Full viewport height */
-  width: 100%;
+  min-height: 600px;
+  height: 100%;
 }
 
 .header .header-title {
