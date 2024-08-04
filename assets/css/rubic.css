@@ -11416,8 +11416,8 @@ textarea {
 }
 
 .header {
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #efefef url(../imgs/header.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #efefef url(../imgs/header.jpg);
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #efefef url(../imgs/header.png);
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #efefef url(../imgs/header.png);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
