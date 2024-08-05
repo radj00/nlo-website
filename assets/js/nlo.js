@@ -255,3 +255,16 @@ $(document).ready(function(){
         }
     }
 });
+
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel({
+    items: 1, // Number of items to display at once
+    loop: true, // Loop the carousel
+    margin: 10, // Margin between items
+    nav: false, // Hide navigation arrows
+    dots: false, // Hide dots
+    autoplay: true, // Auto-play the carousel
+    autoplayTimeout: 5000, // Time between slides
+    autoplayHoverPause: true // Pause on hover
+  });
+});
