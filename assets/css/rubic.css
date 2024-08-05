@@ -10789,7 +10789,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #ff9a44 !important;
+  color: #ffffff !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -11415,77 +11415,6 @@ textarea {
   }
 }
 
-.header {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #efefef url(../imgs/header.png);
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  color: white;
-  position: relative;
-  min-height: 300px; /* Minimum height */
-  height: 100vh; /* Full viewport height */
-  width: 100%;
-}
-
-.header .header-title {
-  font-size: 45px;
-  font-weight: 300;
-}
-
-.header .header-title strong {
-  font-weight: 700;
-}
-
-.header .header-subtitle {
-  font-size: 30px !important;
-  font-weight: 100;
-}
-
-.header .header-subtitle:after {
-  content: "";
-  width: 60px;
-  height: 4px;
-  border-radius: 2px;
-  background-color: #fff;
-  display: block;
-  margin: 20px 0;
-}
-
-.header .header-form {
-  display: block;
-  background-color: #f8f9fa;
-  border-radius: 0.17rem;
-  overflow: hidden;
-}
-
-.header .header-form .head {
-  text-align: center;
-  color: #444;
-  font-size: 20px;
-  font-weight: 400;
-  padding: 15px 0;
-}
-
-.header .header-form .body {
-  padding: 25px 20px;
-}
-
-.header .header-form .footer .btn {
-  padding: 15px 0;
-  border-radius: 0;
-}
-
-.header .header-form .footer .btn:focus, .header .header-form .footer .btn:active {
-  box-shadow: none;
-}
-
-.header-title {
-  font-size: 2.4rem;
-  font-weight: bold;
-  opacity: .8;
-  color: #212529;
-}
-
 .header-mini {
   min-height: 24rem;
   height: 24rem;
@@ -11509,40 +11438,6 @@ textarea {
   text-align: center;
   padding: 1rem;
   background: #ffd1aa;
-}
-
-@media (min-width: 768px) {
-  header.page-header {
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 0;
-    height: 100%;
-  }
-  header.page-header .header-content {
-    max-width: 400px;
-    text-align: left;
-    margin: 0;
-  }
-  header.page-header .header-content .header-title {
-    font-size: 60px;
-  }
-  header.page-header .header-content .header-subtitle {
-    font-size: 45px;
-  }
-  header.page-header .header-content .header-subtitle:after {
-    margin: 18px 0 22px;
-  }
-  header.page-header .header-content p {
-    font-size: 17px;
-  }
-}
-
-@media (min-width: 992px) {
-  header.page-header .header-content {
-    max-width: 600px;
-  }
 }
 
 .section {

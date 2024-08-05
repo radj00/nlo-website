@@ -1,3 +1,80 @@
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #efefef url(../imgs/header.png);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  color: white;
+  position: relative;
+  min-height: 300px; /* Minimum height */
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-end; /* Align items at the bottom */
+}
+
+.header .header-content {
+  text-align: center; /* Center text horizontally */
+  padding: 50px; /* Optional: Adjust padding to avoid content touching edges */
+  background-color: rgba(0, 0, 0, 0.50); /* Black background with 25% opacity */
+  border-radius: 5px; /* Optional: for rounded corners */
+}
+
+.header .header-content p {
+  font-size: 15px;
+  text-align: justify; /* Justify text */
+  margin-bottom: 20px; /* Optional: Adjust space below the paragraph */
+}
+
+.header .header-subtitle {
+  font-size: 20px !important;
+  font-weight: 100;
+}
+
+.header .header-subtitle:after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #fff;
+  display: block;
+  margin: 20px auto; /* Center the line */
+}
+
+@media (min-width: 768px) {
+  header.page-header {
+    padding: 0;
+    height: 100%;
+  }
+
+  header.page-header .header-content {
+    max-width: 400px;
+    text-align: left;
+    margin: 0;
+  }
+  header.page-header .header-content .header-title {
+    font-size: 50px;
+  }
+  header.page-header .header-content .header-subtitle {
+    font-size: 35px;
+  }
+  header.page-header .header-content .header-subtitle:after {
+    margin: 18px 0 22px;
+  }
+  header.page-header .header-content p {
+    font-size: 15px;
+    text-align: justify; /* Justify text for larger screens */
+  }
+}
+
+@media (min-width: 992px) {
+  header.page-header .header-content {
+    max-width: 600px;
+  }
+}
+
+
+
 
 /* Overlay for red center on section-box */
 .section-box {
