@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: flex-end; /* Align items at the bottom */
-  padding-bottom: 20px; /* Adjust to add space between the bottom of the image and the content */
+  padding-bottom: 10px; /* Adjust to add space between the bottom of the image and the content */
 }
 
 .header .header-content {
@@ -19,18 +19,18 @@
   padding: 50px; /* Padding inside the box */
   background-color: rgba(0, 0, 0, 0.50); /* Black background with 50% opacity */
   border-radius: 5px; /* Optional: for rounded corners */
-  margin-bottom: 10px; /* Adjust if additional space is needed below the content */
+  margin-bottom: 5px; /* Adjust if additional space is needed below the content */
 }
 
 .header .header-content p {
-  font-size: 15px;
+  font-size: 14px;
   text-align: justify; /* Justify text */
   margin-bottom: 10px; /* Optional: Adjust space below the paragraph */
   text-indent: 60px;
 }
 
 .header .header-subtitle {
-  font-size: 30px !important;
+  font-size: 20px !important;
   font-weight: 100;
 }
 
