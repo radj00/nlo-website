@@ -26,6 +26,7 @@
   font-size: 15px;
   text-align: justify; /* Justify text */
   margin-bottom: 10px; /* Optional: Adjust space below the paragraph */
+  text-indent: 60px;
 }
 
 .header .header-subtitle {
