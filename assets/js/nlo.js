@@ -42,6 +42,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     // Define image folders and files for each carousel
     var carousels = {
+        /*
         'carousel1': {
             folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
             files: [
@@ -64,6 +65,30 @@ $(document).ready(function(){
                 'San Miguel Brewery, Inc.png',
                 'San Miguel Corporation, Inc.jpg',
                 'San Miguel Foods, Inc.png'
+            ],
+            autoplayTimeout: 4000 // 5 seconds*/
+        'carousel1': {
+            folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
+            files: [
+                'Manila Water Company, Inc',
+                'Meralco Industrial Engineering Services Corporation',
+                'Meralco Powergen Corporation',
+                'Meralco',
+                'MIESCOR Builders',
+                'MIESCOR LOGISTICS, INC',
+                'Phoenix Petroleum Philippines, Inc'
+            ],
+            autoplayTimeout: 3000 // 3 seconds
+        },
+        'carousel2': {
+            folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
+            files: [
+                'Ginebra San Miguel, Inc',
+                'Magnolia, Inc',
+                'Nestle Philippines Inc',
+                'San Miguel Brewery, Inc',
+                'San Miguel Corporation, Inc',
+                'San Miguel Foods, Inc'
             ],
             autoplayTimeout: 4000 // 5 seconds
         },

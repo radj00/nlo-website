@@ -29,19 +29,19 @@
   text-indent: 60px;
 }
 
-.header .header-subtitle {
-  font-size: 20px !important;
+.header .header-title {
+  font-size: 28px !important;
   font-weight: 100;
 }
 
-.header .header-subtitle:after {
+.header .header-title:after {
   content: "";
-  width: 60px;
-  height: 4px;
-  border-radius: 2px;
-  background-color: #fff;
+  width: 80px;
+  height: 3px;
+  border-radius: 20px;
+  background-color: #900C3F;
   display: block;
-  margin: 20px auto; /* Center the line */
+  margin: 15px auto 18px; /* Center the line */
 }
 
 @media (min-width: 768px) {
@@ -131,6 +131,13 @@
 .section:nth-child(odd) h6 {
   color: #ed9042; /* Color for h6 elements */
 }
+
+/* Style for Text #3 Overlay */
+.position-relative {
+    position: relative;
+}
+
+
 .hass-line {
   position: relative;
   display: inline-block;
@@ -148,8 +155,8 @@
 }
 /* firm-has-img-bg start */
 .firm-has-img-bg {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/lawyers.png);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/lawyers.png);
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/2.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/2.png);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
