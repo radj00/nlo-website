@@ -125,7 +125,7 @@
 }
 
 .section:nth-child(odd) p {
-  color: #ffffff; /* White color for paragraphs */
+  color: #fff; /* White color for paragraphs */
 }
 
 .section:nth-child(odd) h6 {
@@ -181,6 +181,19 @@ p.mb-5.font-weight-light {
   line-height: 1.1;      /* Adjusted line spacing for better fit */
 }
 
+/* firm-has-img-bg start */
+.contact-has-img-bg {
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/8.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/8.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #ff9a44;
+  position: relative;
+}
+.contact-has-img-bg p {
+  color: #fff; /* Color for the paragraph */
+}
 .scroll-interactive-container {
     width: 100%;
     overflow: hidden;
@@ -314,6 +327,11 @@ img {
     text-align: center;
     border-radius: 8px; /* Optional: for rounded corners */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Optional: for shadow effect */
+}
+
+/* Change text color to white for odd .item elements */
+.item:nth-child(odd) .fallback-text {
+    color: #8b8b8b; /* White text color */
 }
 
 /* Optional: Styling for the carousel */

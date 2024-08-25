@@ -11448,7 +11448,9 @@ textarea {
 .section:nth-child(odd) {
   background-color: #111825;
 }
-
+.footer:nth-child(odd) {
+  background-color: #ffffff;
+}
 /*Tabs nav section*/
 .tabs-container {
   display: -webkit-box;
