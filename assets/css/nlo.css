@@ -315,6 +315,12 @@ img {
     color: #333; /* Adjust color as needed */
 }
 
+.carousel-inner img {
+    max-height: 300px; /* Adjust this value to control the maximum height */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
 .item .fallback-text {
     display: flex;
     align-items: center;

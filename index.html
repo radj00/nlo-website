@@ -78,30 +78,33 @@
                     </div>
                 </div>
 
-                <!-- Text #2 Opposite Second Photo -->
-                <div class="col-lg-12 mb-5 mx-auto">
-                    <div class="row">
-                        <div class="col-lg-6 order-1 order-lg-2 mb-4">
-                            <img class="shadow-lg w-100" src="assets/imgs/associates.png" alt="Lawyers">
+                <!-- Carousel Gallery -->
+                <div class="col-lg-12">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block mx-auto shadow-lg" src="assets/imgs/partners-mtg.png" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block mx-auto shadow-lg" src="assets/imgs/partners-mtg2.png" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block mx-auto shadow-lg" src="assets/imgs/assocs.png" alt="Third slide">
+                            </div>
                         </div>
-                        <div class="col-lg-6 order-2 order-lg-1">
-                            <p>
-                                For every case or matter referred to us, we work as a team and pool our heads together to deliver positive outcomes for our clients. We are proud to have advocated for principles that now form part of Philippine labor jurisprudence, that are not only being studied in law schools but are also being quoted as precedents by the Supreme Court. A few of such doctrines had even found their way in the Philippine bar examinations.
-                            </p>
-                            <p>
-                                A further point of interest is that the United Nations International Labour Organization had deemed some of our cases to be of such significance as to include them in its agenda in 2008.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Text #3 Overlaid on Third Image -->
-                <div class="col-lg-10 mb-5 mx-auto">
-                    <div class="position-relative">
-                        <h4>Solutions That Work</h4>
-                        <p>
-                            When we are not working on active cases, we counsel clients who seek our opinion on crucial and sensitive decisions concerning employment matters. We are straight shooters who are committed to our clients, and we always come up with solutions that are practical, viable, and cost-effective. Lean on us anytime, all the time.
-                        </p>
+                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -158,7 +161,7 @@
                 <div class="col-md-6 col-lg-5">
                     <h6 class="title">Atty. Joannes Vinarao-Pilapil</h6>
                     <p class="mb-2">Senior Partner</p>
-                    <p>Joannes Vinarao-Pilapil is a partner of the Firm who specializes in dispute resolution, particularly negotiation, mediation and commercial arbitration.  She is an LLB degree holder from the University of the Philippines College of Law and then obtained her Master of Laws (LLM) degree in Alternative Dispute Resolution from the Cardozo School of Law in New York, where she was granted a Dean’s Merit Scholarship, and later conferred a Cardozo Service and Achievement Award. She is a mediator of the Office of Alternative Dispute Resolution (OADR), Department of Justice and the National Center for Mediation (NCM). She had worked for eight (8) years as a Court Attorney at the Supreme Court and Court of Appeals, which accounts for her extensive juristic exposure and expertised commercial arbitration.</p>
+                    <p>Joannes Vinarao-Pilapil is a partner of the Firm who specializes in dispute resolution, particularly negotiation, mediation and commercial arbitration.  She is an LLB degree holder from the University of the Philippines College of Law and then obtained her Master of Laws (LLM) degree in Alternative Dispute Resolution from the Cardozo School of Law in New York, where she was granted a Dean’s Merit Scholarship, and later conferred a Cardozo Service and Achievement Award. She is a mediator of the Office of Alternative Dispute Resolution (OADR), Department of Justice and the National Center for Mediation (NCM). She had worked for eight (8) years as a Court Attorney at the Supreme Court and Court of Appeals, which accounts for her extensive juristic exposure and expertise.</p>
                 </div>
                 <div class="col-md-5 mt-4 mt-md-0">
                     <img src="assets/imgs/JUVP.jpg" alt="" class="shadow-lg w-50">
@@ -197,16 +200,39 @@
     <section class="section text-center" id="lawyers">
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-md-6 align-self-center mb-4 mb-md-0">
-                    <img src="assets/imgs/associates2.png" alt="" class="shadow-lg w-100">
+                <!-- Text #2 Opposite Second Photo -->
+                <div class="col-lg-12 mb-5 mx-auto">
+                    <div class="row">
+                        <!-- Image Column -->
+                        <div class="col-md-6 col-lg-6 order-1 order-lg-2 mb-4">
+                            <img class="shadow-lg w-100" src="assets/imgs/associates.png" alt="Lawyers">
+                        </div>
+                        <!-- Text Column -->
+                        <div class="col-md-6 col-lg-6 order-2 order-lg-1">
+                            <h6 class="title">Associates</h6>
+                            <p>
+                                For every case or matter referred to us, we work as a team and pool our heads together to deliver positive outcomes for our clients. We are proud to have advocated for principles that now form part of Philippine labor jurisprudence, that are not only being studied in law schools but are also being quoted as precedents by the Supreme Court. A few of such doctrines had even found their way in the Philippine bar examinations.
+                            </p>
+                            <p>
+                                A further point of interest is that the United Nations International Labour Organization had deemed some of our cases to be of such significance as to include them in its agenda in 2008.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-5">
-                    <h6 class="title">Associates</h6>
-                    <p>This is where the write up of the associates will go.</p>
+
+                <!-- Text #3 Overlaid on Third Image -->
+                <div class="col-lg-10 mb-5 mx-auto">
+                    <div class="position-relative">
+                        <h4>Solutions That Work</h4>
+                        <p>
+                            When we are not working on active cases, we counsel clients who seek our opinion on crucial and sensitive decisions concerning employment matters. We are straight shooters who are committed to our clients, and we always come up with solutions that are practical, viable, and cost-effective. Lean on us anytime, all the time.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section class="section" id="clients">
         <div class="container text-center">
             <h6 class="display-4 hass-line">OUR CLIENTS</h6>
@@ -298,16 +324,16 @@
                 </div>
                 <div class="col-md-4">
                     <div class="career-item">                        
-                        <h6 class="job-title">Legal Secretary</h6>
-                        <p class="job-description">The Legal Secretary will manage administrative tasks such as scheduling, document preparation, and communication with clients. Attention to detail and excellent organizational skills are required.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="career-item">                        
                         <h6 class="job-title">Underbar Associate</h6>
                         <p class="job-description">The Underbar Associate will support lawyers by conducting legal research, drafting documents, and organizing case files. Experience in legal procedures and strong communication skills are necessary.</p>
                     </div>
-                </div>              
+                </div> 
+                <div class="col-md-4">
+                    <div class="career-item">                        
+                        <h6 class="job-title">Legal Secretary</h6>
+                        <p class="job-description">The Legal Secretary will manage administrative tasks such as scheduling, document preparation, and communication with clients. Attention to detail and excellent organizational skills are required.</p>
+                    </div>
+                </div>           
             </div>
         </div>
     </section>
