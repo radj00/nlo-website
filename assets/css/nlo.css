@@ -13,6 +13,26 @@
   align-items: flex-end; /* Align items at the bottom */
   padding-bottom: 10px; /* Adjust to add space between the bottom of the image and the content */
 }
+/* Styles for the text column within the section */
+.text-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Ensure text is centered */
+    height: 100%; /* Full height for vertical centering */
+    padding: 20px; /* Optional: Add padding if needed */
+}
+
+/* Adjust margin directly on the title text */
+.text-column-center .title-text {
+    margin-top: 70px; /* Adjust as needed */
+}
+
+/* Adjust margin directly on the paragraph text */
+.text-column-center .paragraph-text {
+    margin-top: 20px; /* Adjust as needed */
+}
 
 .header .header-content {
   text-align: center; /* Center text horizontally */
