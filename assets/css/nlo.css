@@ -27,6 +27,8 @@
 /* Adjust margin directly on the title text */
 .text-column-center .title-text {
     margin-top: 8px; /* Adjust as needed */
+    font-weight: bold;
+    font-size: 26px;
 }
 
 /* Adjust margin directly on the paragraph text */
