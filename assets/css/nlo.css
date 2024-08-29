@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
-    text-align: center; /* Ensure text is centered */
+    text-align: left; /* Ensure text is centered */
     height: 100%; /* Full height for vertical centering */
     padding: 20px; /* Optional: Add padding if needed */
 }
@@ -30,12 +30,14 @@
     font-weight: 500;
     font-size: 26px;
 }
-
-/* Adjust margin directly on the paragraph text */
-.text-column-center .paragraph-text {
-    margin-top: 20px; /* Adjust as needed */
+.text-justify {
+    tex-align: left;
 }
 
+.txt-b {
+    font-weight: bold; /* Make the text bold */
+    color: #ed9042 !important;
+}
 .header .header-content {
   text-align: center; /* Center text horizontally */
   padding: 50px; /* Padding inside the box */
@@ -48,7 +50,6 @@
   font-size: 14px;
   text-align: justify; /* Justify text */
   margin-bottom: 10px; /* Optional: Adjust space below the paragraph */
-  text-indent: 60px;
 }
 
 .header .header-title {
