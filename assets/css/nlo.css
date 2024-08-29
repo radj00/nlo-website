@@ -35,6 +35,9 @@
     margin-top: 20px;
 }
 
+.job-title {
+    color: #ed9042;
+}
 .txt-b {
     font-weight: bold; /* Make the text bold */
     color: #ed9042 !important;
