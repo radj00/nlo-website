@@ -31,12 +31,14 @@
     font-size: 26px;
 }
 .text-justify {
-    tex-align: left;
+    text-align: left;
+    margin-top: 20px;
 }
 
 .txt-b {
     font-weight: bold; /* Make the text bold */
     color: #ed9042 !important;
+    margin-top: 10px;
 }
 .header .header-content {
   text-align: center; /* Center text horizontally */
