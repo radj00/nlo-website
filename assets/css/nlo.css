@@ -34,7 +34,9 @@
     text-align: left;
     margin-top: 20px;
 }
-
+.txt-justify {
+    text-align: left;
+}
 .job-title {
     color: #ed9042;
 }
