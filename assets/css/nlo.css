@@ -38,6 +38,10 @@
 .job-title {
     color: #ed9042;
 }
+
+.pos {
+    font-style: italic;
+}
 .txt-b {
     font-weight: bold; /* Make the text bold */
     color: #ed9042 !important;
