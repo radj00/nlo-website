@@ -165,7 +165,6 @@ $(document).ready(function(){
             files: [
                 'Ikano Philippines', // Text placeholders
                 'JS Unitrade Merchandise, Inc.',
-                'Personal Collection Direct Selling Inc.',
                 'GR8 Affinity BPO, Inc.',
                 'Temps & Staffers, Inc.',
                 'Servicio Filipino'
