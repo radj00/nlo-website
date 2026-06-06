@@ -9,31 +9,28 @@ $(document).ready(function(){
     // Define client groups and logo/text entries.
     var clientGroups = {
         'carousel1': {
-            folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
             files: [
-                'Manila Water Company, Inc.jpg',
-                'Meralco Industrial Engineering Services Corporation.jpg',
-                'Meralco Powergen Corporation.png',
-                'Meralco.png',
-                'MIESCOR Builders.png',
-                'MIESCOR LOGISTICS, INC.jpg',
-                'Phoenix Petroleum Philippines, Inc.png'
+                'Manila Water Company, Inc',
+                'Meralco Industrial Engineering Services Corporation',
+                'Meralco Powergen Corporation',
+                'Meralco',
+                'MIESCOR Builders',
+                'MIESCOR LOGISTICS, INC',
+                'Phoenix Petroleum Philippines, Inc'
             ]
         },
         'carousel2': {
-            folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
             files: [
-                'Ginebra San Miguel, Inc.jpg',
-                'Magnolia, Inc.png',
-                'Nestle Philippines Inc.webp',
-                'San Miguel Brewery, Inc.png',
-                'San Miguel Corporation, Inc.jpg',
-                'San Miguel Foods, Inc.png',
-                'San Miguel Purefoods Company, Inc.jpg'
+                'Ginebra San Miguel, Inc',
+                'Magnolia, Inc',
+                'Nestle Philippines Inc',
+                'San Miguel Brewery, Inc',
+                'San Miguel Corporation, Inc',
+                'San Miguel Foods, Inc',
+                'San Miguel Purefoods Company, Inc'
             ]
         },
         'carousel3': {
-            folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
             files: [
                 'The Hongkong and Shanghai Banking Corp.',
                 'Bank of the Philippine Islands',
@@ -44,7 +41,6 @@ $(document).ready(function(){
             ]
         },
         'carousel4': {
-            folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
             files: [
                 'Mercury Group of Companies',
                 "St. Luke's Medical Center",
@@ -64,7 +60,6 @@ $(document).ready(function(){
             ]
         },
         'carousel5': {
-            folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
             files: [
                 'ABS-CBN Corporation',
                 'Sky Cable Corporation',
@@ -73,14 +68,12 @@ $(document).ready(function(){
             ]
         },
         'carousel6': {
-            folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
             files: [
                 'Globe Telecom, Inc.',
                 'PLDT, Inc.'
             ]
         },
         'carousel7': {
-            folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
             files: [
                 'Makati Shangri-la Hotel & Resort, Inc.',
                 'The Peninsula Manila',
@@ -98,7 +91,6 @@ $(document).ready(function(){
             ]
         },
         'carousel8': {
-            folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
             files: [
                 'Ayala Land, Inc.',
                 'Ayala Land Sales, Inc.',
@@ -121,14 +113,12 @@ $(document).ready(function(){
             ]
         },
         'carousel9': {
-            folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
             files: [
                 'Nickel Asia Corporation',
                 'Filminera Resources Corporation'
             ]
         },
         'carousel10': {
-            folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
             files: [
                 'Avon Products Manufacturing, Inc.',
                 'LT Group',
@@ -142,13 +132,11 @@ $(document).ready(function(){
             ]
         },
         'carousel11': {
-            folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
             files: [
                 'Toyota Motor Philippines Corporation'
             ]
         },
         'carousel12': {
-            folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
             files: [
                 'Ikano Philippines', // Text placeholders
                 'JS Unitrade Merchandise, Inc.',
@@ -169,7 +157,18 @@ $(document).ready(function(){
             .toLowerCase();
     }
 
-    function renderClientList(groupId, images, folder, renderedClients) {
+    function getClientName(item) {
+        return item
+            .trim()
+            .replace(/\.(jpg|jpeg|png|webp)$/i, '')
+            .replace(/\s+/g, ' ');
+    }
+
+    function getVisibleItems(count, maxItems) {
+        return Math.max(1, Math.min(count, maxItems));
+    }
+
+    function renderClientList(groupId, clients, renderedClients) {
         var $clientList = $('#' + groupId);
         var uniqueItems = [];
         var seenItems = {};
@@ -180,8 +179,8 @@ $(document).ready(function(){
 
         $clientList.empty();
 
-        images.forEach(function(item) {
-            var cleanItem = item.trim();
+        clients.forEach(function(item) {
+            var cleanItem = getClientName(item);
             var key = getClientKey(cleanItem);
 
             if (cleanItem && !seenItems[key] && !renderedClients[key]) {
@@ -191,31 +190,33 @@ $(document).ready(function(){
             }
         });
 
-        // Dynamically add images or text client names to the list
         uniqueItems.forEach(function(item) {
-            var imgSrc = folder + item;
-            var imgAlt = item.split('.')[0]; // Use the item name before the extension as alt text
-
-            if (item.includes('.jpg') || item.includes('.png') || item.includes('.webp')) {
-                // Handle images
-                var $img = $('<img>').attr({
-                    src: imgSrc,
-                    alt: imgAlt
-                });
-
-                // Handle the error event for images
-                $img.on('error', function() {
-                    $(this).replaceWith($('<div>', { class: 'client-name', text: imgAlt }));
-                });
-
-                $('<div>', { class: 'client-item client-logo' }).append($img).appendTo($clientList);
-            } else {
-                // Handle text-only client names
-                $('<div>', { class: 'client-item' })
-                    .append($('<div>', { class: 'client-name', text: item }))
-                    .appendTo($clientList);
-            }
+            $('<div>', { class: 'client-item' })
+                .append($('<div>', { class: 'client-name', text: item }))
+                .appendTo($clientList);
         });
+
+        if (uniqueItems.length > 1 && $.fn.owlCarousel) {
+            $clientList.addClass('owl-carousel owl-theme').owlCarousel({
+                loop: false,
+                rewind: false,
+                margin: 14,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3200,
+                autoplayHoverPause: true,
+                smartSpeed: 450,
+                responsive: {
+                    0: { items: 1 },
+                    576: { items: getVisibleItems(uniqueItems.length, 2) },
+                    992: { items: getVisibleItems(uniqueItems.length, 3) },
+                    1200: { items: getVisibleItems(uniqueItems.length, 4) }
+                }
+            });
+        } else {
+            $clientList.addClass('client-list-static');
+        }
     }
 
     // Render all client groups
@@ -224,7 +225,7 @@ $(document).ready(function(){
     for (var groupId in clientGroups) {
         if (clientGroups.hasOwnProperty(groupId)) {
             var config = clientGroups[groupId];
-            renderClientList(groupId, config.files, config.folder, renderedClients);
+            renderClientList(groupId, config.files, renderedClients);
         }
     }
 });
