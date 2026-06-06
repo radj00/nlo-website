@@ -165,7 +165,7 @@ $(document).ready(function(){
     }
 
     function getVisibleItems(count, maxItems) {
-        return Math.max(1, Math.min(count, maxItems));
+        return Math.max(1, Math.min(count - 1, maxItems));
     }
 
     function renderClientList(groupId, clients, renderedClients) {
@@ -198,7 +198,7 @@ $(document).ready(function(){
 
         if (uniqueItems.length > 1 && $.fn.owlCarousel) {
             $clientList.addClass('owl-carousel owl-theme').owlCarousel({
-                loop: false,
+                loop: true,
                 rewind: false,
                 margin: 14,
                 nav: false,
