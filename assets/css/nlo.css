@@ -14,6 +14,25 @@
   padding-bottom: 10px; /* Adjust to add space between the bottom of the image and the content */
 }
 
+.page-navbar {
+  background: #111825;
+}
+
+.page-navbar.affix-top {
+  background-color: rgba(52, 58, 64, 0.2);
+  box-shadow: none;
+}
+
+.page-navbar.affix {
+  min-height: 75px;
+  background: #111825;
+  box-shadow: 0 3px 14px rgba(52, 58, 64, 0.4);
+}
+
+.page-navbar.affix .navbar-brand {
+  font-size: 24px;
+}
+
 .header .header-content {
   text-align: center; /* Center text horizontally */
   padding: 50px; /* Padding inside the box */
