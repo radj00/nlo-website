@@ -2,71 +2,19 @@ document.addEventListener('scroll', function() {
     const scrollY = window.scrollY;
     const image = document.querySelector('.scroll-interactive-image img');
 
+    if (!image) {
+        return;
+    }
+
     // Adjust the value below as needed for the desired effect
     const moveDistance = scrollY * 0.5;
 
     // Ensure the image moves within the container
     image.style.transform = `translateX(${Math.min(moveDistance, window.innerWidth)}px)`;
 });
-/*
-$(document).ready(function(){
-    // Define image folder and files
-    var imageFolder = 'assets/brands/';
-    var imageFiles = [
-        'Ginebra San Miguel, Inc.jpg',
-        'Magnolia, Inc.png',
-        'Nestle Philippines Inc.webp',
-        'San Miguel Brewery, Inc.png',
-        'San Miguel Corporation, Inc.jpg',
-        'San Miguel Foods, Inc.png'
-    ];
-    var $carousel = $('.owl-carousel');
-
-    // Dynamically add images to the carousel
-    imageFiles.forEach(function(file) {
-        $carousel.append('<div class="item"><a href="#"><img src="' + imageFolder + file + '" alt="brand-image" /></a></div>');
-    });
-
-    // Initialize Owl Carousel
-    $carousel.owlCarousel({
-        items: 4, // Number of items to show
-        loop: true, // Loop the items
-        margin: 5, // Margin between items
-        nav: true, // Show navigation arrows
-        autoplay: true, // Enable autoplay
-        autoplayTimeout: 3000, // Autoplay timeout in milliseconds
-        autoplayHoverPause: true // Pause autoplay on hover
-    });
-});
-*/
 $(document).ready(function(){
     // Define image folders and files for each carousel
     var carousels = {
-        /*
-        'carousel1': {
-            folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
-            files: [
-                'Manila Water Company, Inc.jpg',
-                'Meralco Industrial Engineering Services Corporation.jpg',
-                'Meralco Powergen Corporation.png',
-                'Meralco.png',
-                'MIESCOR Builders.png',
-                'MIESCOR LOGISTICS, INC.jpg',
-                'Phoenix Petroleum Philippines, Inc.png'
-            ],
-            autoplayTimeout: 3000 // 3 seconds
-        },
-        'carousel2': {
-            folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
-            files: [
-                'Ginebra San Miguel, Inc.jpg',
-                'Magnolia, Inc.png',
-                'Nestle Philippines Inc.webp',
-                'San Miguel Brewery, Inc.png',
-                'San Miguel Corporation, Inc.jpg',
-                'San Miguel Foods, Inc.png'
-            ],
-            autoplayTimeout: 4000 // 5 seconds*/
         'carousel1': {
             folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
             files: [
@@ -252,7 +200,7 @@ $(document).ready(function(){
                 });
 
                 // Append the image to the carousel
-                $carousel.append('<div class="item"><a href="#">' + $img.prop('outerHTML') + '</a></div>');
+                $carousel.append('<div class="item">' + $img.prop('outerHTML') + '</div>');
             } else {
                 // Handle text placeholders
                 $carousel.append('<div class="item"><div class="fallback-text">' + item + '</div></div>');
@@ -281,15 +229,3 @@ $(document).ready(function(){
     }
 });
 
-$(document).ready(function(){
-  $(".owl-carousel").owlCarousel({
-    items: 1, // Number of items to display at once
-    loop: true, // Loop the carousel
-    margin: 10, // Margin between items
-    nav: false, // Hide navigation arrows
-    dots: false, // Hide dots
-    autoplay: true, // Auto-play the carousel
-    autoplayTimeout: 5000, // Time between slides
-    autoplayHoverPause: true // Pause on hover
-  });
-});
