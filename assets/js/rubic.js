@@ -17,15 +17,26 @@ $(document).ready(function(){
 	$(".nav-link").on('click', function(event) {
 
     	if (this.hash !== "") {
+            var hash = this.hash;
+            var $target = $(hash);
+
+            if (!$target.length) {
+                return;
+            }
 
 			event.preventDefault();
 
-			var hash = this.hash;
+            var navbarHeight = $('.page-navbar').outerHeight() || 0;
+            var scrollTop = Math.max($target.offset().top - navbarHeight - 8, 0);
 
 			$('html, body').animate({
-				scrollTop: $(hash).offset().top
+				scrollTop: scrollTop
 			}, 700, function(){
-				window.location.hash = hash;
+                if (window.history && window.history.pushState) {
+                    window.history.pushState(null, '', hash);
+                } else {
+                    window.location.hash = hash;
+                }
 			});
       	} 
     });
