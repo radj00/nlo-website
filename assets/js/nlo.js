@@ -11,27 +11,26 @@ $(document).ready(function(){
         'carousel1': {
             folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
             files: [
-                'Manila Water Company, Inc',
-                'Meralco Industrial Engineering Services Corporation',
-                'Meralco Powergen Corporation',
-                'Meralco',
-                'MIESCOR Builders',
-                'MIESCOR LOGISTICS, INC',
-                'Phoenix Petroleum Philippines, Inc'
-            ],
-            autoplayTimeout: 3000 // 3 seconds
+                'Manila Water Company, Inc.jpg',
+                'Meralco Industrial Engineering Services Corporation.jpg',
+                'Meralco Powergen Corporation.png',
+                'Meralco.png',
+                'MIESCOR Builders.png',
+                'MIESCOR LOGISTICS, INC.jpg',
+                'Phoenix Petroleum Philippines, Inc.png'
+            ]
         },
         'carousel2': {
             folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
             files: [
-                'Ginebra San Miguel, Inc',
-                'Magnolia, Inc',
-                'Nestle Philippines Inc',
-                'San Miguel Brewery, Inc',
-                'San Miguel Corporation, Inc',
-                'San Miguel Foods, Inc'
-            ],
-            autoplayTimeout: 4000 // 5 seconds
+                'Ginebra San Miguel, Inc.jpg',
+                'Magnolia, Inc.png',
+                'Nestle Philippines Inc.webp',
+                'San Miguel Brewery, Inc.png',
+                'San Miguel Corporation, Inc.jpg',
+                'San Miguel Foods, Inc.png',
+                'San Miguel Purefoods Company, Inc.jpg'
+            ]
         },
         'carousel3': {
             folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
@@ -42,14 +41,13 @@ $(document).ready(function(){
                 'Security Bank Corporation',
                 'Philippine Dealing System Holdings Corp.',
                 'Philippine Business Bank'
-            ],
-            autoplayTimeout: 3000 // 7 seconds
+            ]
         },
         'carousel4': {
             folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
             files: [
                 'Mercury Group of Companies',
-                'St. Luke’s Medical Center ',
+                "St. Luke's Medical Center",
                 'Wyeth Phils, Inc.',
                 'Unilab, Inc.',
                 'Sanofi-Aventis Philippines Inc  ',
@@ -63,8 +61,7 @@ $(document).ready(function(){
                 'HEBE Beauty Cosmetic, Inc.',
                 'Executive Optical',
                 'Genson Distribution, Inc.'
-            ],
-            autoplayTimeout: 4000 // 4 seconds
+            ]
         },
         'carousel5': {
             folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
@@ -73,16 +70,14 @@ $(document).ready(function(){
                 'Sky Cable Corporation',
                 'Pilipino Cable Corporation',
                 'The Velarde Group of Companies, Inc.'
-            ],
-            autoplayTimeout: 3000 // 3 seconds
+            ]
         },
         'carousel6': {
             folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
             files: [
                 'Globe Telecom, Inc.',
                 'PLDT, Inc.'
-            ],
-            autoplayTimeout: 4000 // 5 seconds
+            ]
         },
         'carousel7': {
             folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
@@ -100,8 +95,7 @@ $(document).ready(function(){
                 'Holiday Inn & Suites Makati',
                 'Discovery Suites',
                 'Discovery Primea Hotel'
-            ],
-            autoplayTimeout: 3000 // 3 seconds
+            ]
         },
         'carousel8': {
             folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
@@ -124,16 +118,14 @@ $(document).ready(function(){
                 'Ayala Property Management Corporation',
                 'Leechiu Property Consultants, Inc.',
                 'Shang Global City Properties, Inc.'
-            ],
-            autoplayTimeout: 4000 // 5 seconds
+            ]
         },
         'carousel9': {
             folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
             files: [
                 'Nickel Asia Corporation',
                 'Filminera Resources Corporation'
-            ],
-            autoplayTimeout: 3000 // 3 seconds
+            ]
         },
         'carousel10': {
             folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
@@ -147,15 +139,13 @@ $(document).ready(function(){
                 'Solid Cement Corporation',
                 'Republic Cement Services, Inc.',
                 'Cygnus Industries, Inc.'
-            ],
-            autoplayTimeout: 5000 // 5 seconds
+            ]
         },
         'carousel11': {
             folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
             files: [
                 'Toyota Motor Philippines Corporation'
-            ],
-            autoplayTimeout: 3000 // 3 seconds
+            ]
         },
         'carousel12': {
             folder: 'assets/brands/FOOD and BEVERAGE MANUFACTURING/',
@@ -166,17 +156,28 @@ $(document).ready(function(){
                 'GR8 Affinity BPO, Inc.',
                 'Temps & Staffers, Inc.',
                 'Servicio Filipino'
-            ],
-            autoplayTimeout: 5000 // 5 seconds
+            ]
         }
     };
 
-    // Function to initialize an Owl Carousel
-    function initializeCarousel(carouselId, images, folder, timeout) {
-        var $carousel = $('#' + carouselId);
+    // Function to render client lists
+    function renderClientList(carouselId, images, folder) {
+        var $clientList = $('#' + carouselId);
+        var uniqueItems = [];
+        var seenItems = {};
 
-        // Dynamically add images or text placeholders to the carousel
         images.forEach(function(item) {
+            var cleanItem = item.trim();
+            var key = cleanItem.toLowerCase();
+
+            if (!seenItems[key]) {
+                seenItems[key] = true;
+                uniqueItems.push(cleanItem);
+            }
+        });
+
+        // Dynamically add images or text client names to the list
+        uniqueItems.forEach(function(item) {
             var imgSrc = folder + item;
             var imgAlt = item.split('.')[0]; // Use the item name before the extension as alt text
 
@@ -189,35 +190,25 @@ $(document).ready(function(){
 
                 // Handle the error event for images
                 $img.on('error', function() {
-                    $(this).replaceWith('<div class="item"><div class="fallback-text">' + imgAlt + '</div></div>');
+                    $(this).replaceWith($('<div>', { class: 'client-name', text: imgAlt }));
                 });
 
                 // Append the image to the carousel
-                $carousel.append('<div class="item">' + $img.prop('outerHTML') + '</div>');
+                $('<div>', { class: 'client-item client-logo' }).append($img).appendTo($clientList);
             } else {
-                // Handle text placeholders
-                $carousel.append('<div class="item"><div class="fallback-text">' + item + '</div></div>');
+                // Handle text-only client names
+                $('<div>', { class: 'client-item' })
+                    .append($('<div>', { class: 'client-name', text: item }))
+                    .appendTo($clientList);
             }
-        });
-
-        // Initialize Owl Carousel
-        $carousel.owlCarousel({
-            items: 4, // Number of items to show
-            loop: true, // Loop the items
-            margin: 10, // Margin between items
-            nav: false, // Hide navigation arrows
-            dots: false, // Hide dots
-            autoplay: true, // Enable autoplay
-            autoplayTimeout: timeout, // Autoplay timeout in milliseconds
-            autoplayHoverPause: true // Pause autoplay on hover
         });
     }
 
-    // Initialize all carousels
+    // Render all client groups
     for (var carouselId in carousels) {
         if (carousels.hasOwnProperty(carouselId)) {
             var config = carousels[carouselId];
-            initializeCarousel(carouselId, config.files, config.folder, config.autoplayTimeout);
+            renderClientList(carouselId, config.files, config.folder);
         }
     }
 });
