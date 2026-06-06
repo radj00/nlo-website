@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 $(document).ready(function(){
-    // Define image folders and files for each carousel
-    var carousels = {
+    // Define client groups and logo/text entries.
+    var clientGroups = {
         'carousel1': {
             folder: 'assets/brands/OIL, POWER, ENERGY and UTILITIES/',
             files: [
@@ -161,17 +161,32 @@ $(document).ready(function(){
     };
 
     // Function to render client lists
-    function renderClientList(carouselId, images, folder) {
-        var $clientList = $('#' + carouselId);
+    function getClientKey(item) {
+        return item
+            .trim()
+            .replace(/\.(jpg|jpeg|png|webp)$/i, '')
+            .replace(/\s+/g, ' ')
+            .toLowerCase();
+    }
+
+    function renderClientList(groupId, images, folder, renderedClients) {
+        var $clientList = $('#' + groupId);
         var uniqueItems = [];
         var seenItems = {};
 
+        if (!$clientList.length) {
+            return;
+        }
+
+        $clientList.empty();
+
         images.forEach(function(item) {
             var cleanItem = item.trim();
-            var key = cleanItem.toLowerCase();
+            var key = getClientKey(cleanItem);
 
-            if (!seenItems[key]) {
+            if (cleanItem && !seenItems[key] && !renderedClients[key]) {
                 seenItems[key] = true;
+                renderedClients[key] = true;
                 uniqueItems.push(cleanItem);
             }
         });
@@ -193,7 +208,6 @@ $(document).ready(function(){
                     $(this).replaceWith($('<div>', { class: 'client-name', text: imgAlt }));
                 });
 
-                // Append the image to the carousel
                 $('<div>', { class: 'client-item client-logo' }).append($img).appendTo($clientList);
             } else {
                 // Handle text-only client names
@@ -205,10 +219,12 @@ $(document).ready(function(){
     }
 
     // Render all client groups
-    for (var carouselId in carousels) {
-        if (carousels.hasOwnProperty(carouselId)) {
-            var config = carousels[carouselId];
-            renderClientList(carouselId, config.files, config.folder);
+    var renderedClients = {};
+
+    for (var groupId in clientGroups) {
+        if (clientGroups.hasOwnProperty(groupId)) {
+            var config = clientGroups[groupId];
+            renderClientList(groupId, config.files, config.folder, renderedClients);
         }
     }
 });
