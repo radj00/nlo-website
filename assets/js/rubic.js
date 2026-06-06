@@ -14,9 +14,20 @@
 
 // smooth scroll
 $(document).ready(function(){
-	$(".nav-link").on('click', function(event) {
+    function refreshNavbarAffix() {
+        var $navbar = $('.page-navbar');
 
-    	if (this.hash !== "") {
+        if ($.fn.affix && $navbar.data('bs.affix')) {
+            $navbar.affix('checkPosition');
+        }
+    }
+
+    $(window).on('load resize hashchange scroll', refreshNavbarAffix);
+    refreshNavbarAffix();
+
+    $(".nav-link").on('click', function(event) {
+
+        if (this.hash !== "") {
             var hash = this.hash;
             var $target = $(hash);
 
@@ -24,20 +35,28 @@ $(document).ready(function(){
                 return;
             }
 
-			event.preventDefault();
+            event.preventDefault();
 
             var navbarHeight = $('.page-navbar').outerHeight() || 0;
             var scrollTop = Math.max($target.offset().top - navbarHeight - 8, 0);
 
-			$('html, body').animate({
-				scrollTop: scrollTop
-			}, 700, function(){
-                if (window.history && window.history.pushState) {
-                    window.history.pushState(null, '', hash);
-                } else {
-                    window.location.hash = hash;
+            $('html, body').animate({
+                scrollTop: scrollTop
+            }, {
+                duration: 700,
+                step: refreshNavbarAffix,
+                complete: function(){
+                    refreshNavbarAffix();
+
+                    if (window.history && window.history.pushState) {
+                        window.history.pushState(null, '', hash);
+                    } else {
+                        window.location.hash = hash;
+                    }
+
+                    refreshNavbarAffix();
                 }
-			});
-      	} 
+            });
+        } 
     });
 });
