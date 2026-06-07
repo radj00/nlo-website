@@ -14,6 +14,9 @@
 
 // smooth scroll
 $(document).ready(function(){
+    var navbarAffixFrame;
+    var navbarAffixTimer;
+
     function getScrollTop() {
         return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     }
@@ -32,7 +35,23 @@ $(document).ready(function(){
             .toggleClass('affix', !isWelcomeTop);
     }
 
-    $(window).on('load resize hashchange scroll', refreshNavbarAffix);
+    function scheduleNavbarAffixRefresh() {
+        if (window.requestAnimationFrame && !navbarAffixFrame) {
+            navbarAffixFrame = window.requestAnimationFrame(function() {
+                navbarAffixFrame = null;
+                refreshNavbarAffix();
+            });
+        } else {
+            refreshNavbarAffix();
+        }
+
+        window.clearTimeout(navbarAffixTimer);
+        navbarAffixTimer = window.setTimeout(refreshNavbarAffix, 80);
+    }
+
+    $(window).on('load resize hashchange scroll wheel touchmove keydown', scheduleNavbarAffixRefresh);
+    $(document).on('scroll wheel touchmove keydown', scheduleNavbarAffixRefresh);
+    $('body').on('scroll wheel touchmove', scheduleNavbarAffixRefresh);
     refreshNavbarAffix();
 
     $(".nav-link").on('click', function(event) {
