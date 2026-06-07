@@ -350,6 +350,10 @@ img {
     object-fit: cover; /* Ensures the image covers the container */
 }
 
+#myCarousel .carousel-inner {
+    min-height: 300px;
+}
+
 .map-container {
   width: 100%;
   height: 200px; /* Adjust height for mobile screens */
