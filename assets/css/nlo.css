@@ -452,6 +452,41 @@ body {
   background-attachment: scroll !important;
 }
 
+.careers-page .page-navbar {
+  background-color: #111825 !important;
+}
+
+.careers-page-section {
+  min-height: 100svh;
+  padding-top: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.career-item {
+  height: 100%;
+}
+
+.career-item .job-title {
+  color: #ff9a44;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.career-item .job-description {
+  color: #fff;
+}
+
+.career-apply {
+  margin-top: 2rem;
+  color: #fff;
+}
+
+.career-apply a {
+  color: #ff9a44;
+  font-weight: bold;
+}
+
 @media (max-width: 767.98px) {
   .header {
     height: auto;
