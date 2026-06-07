@@ -174,7 +174,7 @@ $(document).ready(function(){
     $('body').on('scroll wheel touchmove', scheduleNavbarAffixRefresh);
     refreshNavbarAffix();
 
-    $(".nav-link").on('click', function(event) {
+    $('.nav-link, .navbar-brand[href^="#"], .footer a[href^="#"]').on('click', function(event) {
 
         if (this.hash !== "") {
             var hash = this.hash;
