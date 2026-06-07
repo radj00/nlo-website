@@ -14,12 +14,22 @@
 
 // smooth scroll
 $(document).ready(function(){
+    function getScrollTop() {
+        return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    }
+
     function refreshNavbarAffix() {
         var $navbar = $('.page-navbar');
 
         if ($.fn.affix && $navbar.data('bs.affix')) {
             $navbar.affix('checkPosition');
         }
+
+        var isWelcomeTop = getScrollTop() <= 20;
+
+        $navbar
+            .toggleClass('affix-top', isWelcomeTop)
+            .toggleClass('affix', !isWelcomeTop);
     }
 
     $(window).on('load resize hashchange scroll', refreshNavbarAffix);
